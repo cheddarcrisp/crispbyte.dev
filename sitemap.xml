@@ -2,57 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-07-01-SDBD/</loc>
+		<loc>https://crispbyte.dev/blog/2024-01-07-01-SDBD/</loc>
 		<lastmod>2024-01-07</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-07-02-Semantics/</loc>
+		<loc>https://crispbyte.dev/blog/2024-01-07-02-Semantics/</loc>
 		<lastmod>2024-01-07</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-07-03-Data_Format/</loc>
+		<loc>https://crispbyte.dev/blog/2024-01-07-03-Data_Format/</loc>
 		<lastmod>2024-01-07</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-09-01-Building_A_Proof_of_Concept/</loc>
+		<loc>https://crispbyte.dev/blog/2024-01-09-01-Building_A_Proof_of_Concept/</loc>
 		<lastmod>2024-01-09</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-09-02-The_Heart_of_the_Code/</loc>
+		<loc>https://crispbyte.dev/blog/2024-01-09-02-The_Heart_of_the_Code/</loc>
 		<lastmod>2024-01-09</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-09-03-Improvements/</loc>
+		<loc>https://crispbyte.dev/blog/2024-01-09-03-Improvements/</loc>
 		<lastmod>2024-01-09</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/about/</loc>
+		<loc>https://crispbyte.dev/about/</loc>
 		<lastmod>2024-01-10</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/blog/</loc>
+		<loc>https://crispbyte.dev/blog/</loc>
 		<lastmod>2024-01-10</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/</loc>
+		<loc>https://crispbyte.dev/</loc>
 		<lastmod>2024-01-10</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/tags/</loc>
+		<loc>https://crispbyte.dev/tags/</loc>
 		<lastmod>2024-01-10</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://crispbyte.dev/eleventy-base-blog/tags/sdbd/</loc>
+		<loc>https://crispbyte.dev/tags/sdbd/</loc>
 		<lastmod>2024-01-10</lastmod>
 	</url>
 </urlset>
