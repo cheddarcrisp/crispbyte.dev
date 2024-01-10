@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-07-01-SDBD/</loc>
+		<lastmod>2024-01-07</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-07-02-Semantics/</loc>
+		<lastmod>2024-01-07</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-07-03-Data_Format/</loc>
+		<lastmod>2024-01-07</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-09-01-Building_A_Proof_of_Concept/</loc>
+		<lastmod>2024-01-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-09-02-The_Heart_of_the_Code/</loc>
+		<lastmod>2024-01-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/blog/2024-01-09-03-Improvements/</loc>
+		<lastmod>2024-01-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/about/</loc>
+		<lastmod>2024-01-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/blog/</loc>
+		<lastmod>2024-01-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/</loc>
+		<lastmod>2024-01-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/tags/</loc>
+		<lastmod>2024-01-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://crispbyte.dev/eleventy-base-blog/tags/sdbd/</loc>
+		<lastmod>2024-01-10</lastmod>
+	</url>
+</urlset>

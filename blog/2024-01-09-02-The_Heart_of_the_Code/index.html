@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The Heart of the Code</title>
+		<meta name="description" content="Programming. Puns.">
+		<link rel="alternate" href="/eleventy-base-blog/feed/feed.xml" type="application/atom+xml" title="Crisp Byte">
+		<link rel="alternate" href="/eleventy-base-blog/feed/feed.json" type="application/json" title="Crisp Byte">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/eleventy-base-blog/" class="home-link">Crisp Byte</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/eleventy-base-blog/">Home</a></li>
+					<li class="nav-item"><a href="/eleventy-base-blog/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/eleventy-base-blog/about/">About Me</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>The Heart of the Code</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-01-09">09 January 2024</time></li>
+	<li><a href="/eleventy-base-blog/tags/sdbd/" class="post-tag">SDBD</a></li>
+</ul>
+
+<p>To complete the proof of concept we need to implement <code>SDBD.ICodec</code>. This is what we're proving after all. The most complicated part will be the HPACK encoding. I'd rather not implement that myself, not for something basic. Fortunately there is a NuGet package that should do the trick. It's called simply <code>hpack</code>.</p>
+<p>At the risk of pulling a <a href="https://knowyourmeme.com/memes/how-to-draw-an-owl">&quot;rest of the owl&quot;</a>, I'm going to jump straight to the final code. I think a short walkthrough is enough to show how the code works without going through the coding process step by step.</p>
+<h2 id="encoder" tabindex="-1">Encoder <a class="header-anchor" href="#encoder">#</a></h2>
+<pre class="language-cs" tabindex="0"><code class="language-cs"><span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> <span class="token function">Encode</span><span class="token punctuation">(</span><span class="token class-name">Document</span> document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> dataLength <span class="token operator">=</span> document<span class="token punctuation">.</span>Data<span class="token punctuation">.</span>Length<span class="token punctuation">;</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> contentLength <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Dictionary<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">,</span> <span class="token keyword">string</span><span class="token punctuation">></span></span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span> <span class="token string">"content-length"</span><span class="token punctuation">,</span> dataLength<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> headers <span class="token operator">=</span> document<span class="token punctuation">.</span>Metadata<span class="token punctuation">.</span><span class="token function">Union</span><span class="token punctuation">(</span>contentLength<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name"><span class="token keyword">var</span></span> packedHeaders <span class="token operator">=</span> <span class="token function">packHeaders</span><span class="token punctuation">(</span>headers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> headerLength <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToUInt16</span><span class="token punctuation">(</span>packedHeaders<span class="token punctuation">.</span>Length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">using</span> <span class="token class-name"><span class="token keyword">var</span></span> output <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">MemoryStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  output<span class="token punctuation">.</span><span class="token function">WriteByte</span><span class="token punctuation">(</span><span class="token number">0x01</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  output<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>BitConverter<span class="token punctuation">.</span><span class="token function">GetBytes</span><span class="token punctuation">(</span>headerLength<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  output<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>packedHeaders<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  output<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>Data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> output<span class="token punctuation">.</span><span class="token function">ToArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> <span class="token function">packHeaders</span><span class="token punctuation">(</span><span class="token class-name">IEnumerable<span class="token punctuation">&lt;</span>KeyValuePair<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">,</span> <span class="token keyword">string</span><span class="token punctuation">></span><span class="token punctuation">></span></span> headers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//0 will disable dynamic table that we don't need anyways</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> encoder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">hpack<span class="token punctuation">.</span>Encoder</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">using</span> <span class="token class-name"><span class="token keyword">var</span></span> output <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">MemoryStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">using</span> <span class="token class-name"><span class="token keyword">var</span></span> writer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">BinaryWriter</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">var</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token keyword">value</span><span class="token punctuation">)</span> <span class="token keyword">in</span> headers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    encoder<span class="token punctuation">.</span><span class="token function">EncodeHeader</span><span class="token punctuation">(</span>writer<span class="token punctuation">,</span> name<span class="token punctuation">,</span> <span class="token keyword">value</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> output<span class="token punctuation">.</span><span class="token function">ToArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The first thing we do is add our one required header to the metadata: <code>content-length</code>. We then pack the headers. The <code>hpack</code> encoder is pretty easy to use. Passing that <code>0</code> into the constructor should disable some HPACK features that don't make sense in the context of SDBD.</p>
+<p>That gives us all the bits we need to write out a document. Version number: <code>0x01</code>. Header length as an unsigned 16-bit integer. The packed headers themselves. And finally the data.</p>
+<p>If I encode a file named <code>test.txt</code> with the content <code>This is a test. This is only a test.</code>, this is the output:</p>
+<pre class="language-text" tabindex="0"><code class="language-text">0000	01 17 00 00 89 21 ea 49  6a 4a d5 0e 92 ff 86 49   .....!.IjJ.....I
+0010	50 95 d3 e5 3f 0f 0d 02  33 36 54 68 69 73 20 69   P...?...36This i
+0020	73 20 61 20 74 65 73 74  2e 20 54 68 69 73 20 69   s a test. This i
+0030	73 20 6f 6e 6c 79 20 61  20 74 65 73 74 2e         s only a test.</code></pre>
+<p>Looks promising. The first byte is the version, the next two decode to integer 23. The next 23 bytes look like the headers to me, and we can even see the content length 36 in the text. Finally there's the 36 bytes of data.</p>
+<h2 id="decoder" tabindex="-1">Decoder <a class="header-anchor" href="#decoder">#</a></h2>
+<pre class="language-cs" tabindex="0"><code class="language-cs"><span class="token keyword">public</span> <span class="token return-type class-name">Document</span> <span class="token function">Decode</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">using</span> <span class="token class-name"><span class="token keyword">var</span></span> input <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">MemoryStream</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name"><span class="token keyword">var</span></span> version <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">ReadByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> version <span class="token keyword">switch</span> <span class="token punctuation">{</span>
+    <span class="token number">0x01</span> <span class="token operator">=></span> <span class="token function">DecodeV1</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    _ <span class="token operator">=></span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Exception</span><span class="token punctuation">(</span><span class="token string">"Unsupported version"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token return-type class-name">Document</span> <span class="token function">DecodeV1</span><span class="token punctuation">(</span><span class="token class-name">Stream</span> stream<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> headerLengthBytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">byte</span></span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  stream<span class="token punctuation">.</span><span class="token function">ReadExactly</span><span class="token punctuation">(</span>headerLengthBytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> headerLength <span class="token operator">=</span> BitConverter<span class="token punctuation">.</span><span class="token function">ToUInt16</span><span class="token punctuation">(</span>headerLengthBytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name"><span class="token keyword">var</span></span> headerBytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">byte</span></span><span class="token punctuation">[</span>headerLength<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  stream<span class="token punctuation">.</span><span class="token function">ReadExactly</span><span class="token punctuation">(</span>headerBytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> headers <span class="token operator">=</span> <span class="token function">unpackHeaders</span><span class="token punctuation">(</span>headerBytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+  <span class="token class-name"><span class="token keyword">string</span></span> contentLengthString<span class="token punctuation">;</span>
+  headers<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token string">"content-length"</span><span class="token punctuation">,</span> <span class="token keyword">out</span> contentLengthString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> contentLength <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>contentLengthString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">byte</span></span><span class="token punctuation">[</span>contentLength<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  stream<span class="token punctuation">.</span><span class="token function">ReadExactly</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Document</span><span class="token punctuation">(</span>headers<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>To decode we first read the version byte. If the version is the only version we have implemented now, we jump into the real implementation. (Throw an exception otherwise.)</p>
+<p>We read the next two bytes to get the header length. We read that number of bytes to get the encoded headers. We decode the headers, extract <code>content-length</code>, and read that number of bytes as the data. Then we pack it up in our <code>Document</code> data structure and send it back.</p>
+<p>I left out the implementation of <code>unpackHeaders</code> here because it's mildly confusing if you're not familiar with old .NET patterns. You can find it with the complete <a href="https://github.com/cheddarcrisp/sdbd-demo">source for this implementation on GitHub</a>.</p>
+<h2 id="and-now" tabindex="-1">And now... <a class="header-anchor" href="#and-now">#</a></h2>
+<p>It's time for a break. I have successfully created a brand new data format. Or at least stitched one together like Frankenstein's monster. I have a working implementation that can encode and decode the format, albeit with only one header implemented.</p>
+<p>I'm already building a list of improvements. I'm not planning on tackling them for a bit. First I want to hear other people's feedback. Since this is the internet, somebody will no doubt tell me that something like this already exists. If that's true, great! I'll be sure to link it here for anybody interested.</p>
+<p>Either way I certainly haven't wasted my time, and I hope you don't feel like you've wasted yours. I think the process of developing the SDBD format and a proof of concept was a valuable learning experience on its own. I want to hear feedback, so feel free to log issues on GitHub or find me on the Fediverse.</p>
+<p>If you like SDBD and want to use it, go for it! I think the format itself is sound. The demo implementation has at least one security issue, so use it with caution.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/eleventy-base-blog/blog/2024-01-09-01-Building_A_Proof_of_Concept/">Building a Proof of Concept</a></li><li>Next: <a href="/eleventy-base-blog/blog/2024-01-09-03-Improvements/">Improvements</a></li>
+</ul>
+
+		</main>
+
+		<footer></footer>
+
+		<!-- Current page: /eleventy-base-blog/blog/2024-01-09-02-The_Heart_of_the_Code/ -->
+	</body>
+</html>

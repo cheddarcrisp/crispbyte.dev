@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Semantics of SDBD</title>
+		<meta name="description" content="Programming. Puns.">
+		<link rel="alternate" href="/eleventy-base-blog/feed/feed.xml" type="application/atom+xml" title="Crisp Byte">
+		<link rel="alternate" href="/eleventy-base-blog/feed/feed.json" type="application/json" title="Crisp Byte">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/eleventy-base-blog/" class="home-link">Crisp Byte</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/eleventy-base-blog/">Home</a></li>
+					<li class="nav-item"><a href="/eleventy-base-blog/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/eleventy-base-blog/about/">About Me</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Semantics of SDBD</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-01-07">07 January 2024</time></li>
+	<li><a href="/eleventy-base-blog/tags/sdbd/" class="post-tag">SDBD</a></li>
+</ul>
+
+<p>To really start bringing this new data format to life, we need to talk about what's in it. Establishing the semantics of a format gives us the terms and concepts we need to talk about the format abstractly before we get to any concrete details.</p>
+<h2 id="start-with-the-data" tabindex="-1">Start with the data <a class="header-anchor" href="#start-with-the-data">#</a></h2>
+<p>Let's start with a simple example. Here is a base64 encoding of some arbitrary data.</p>
+<pre class="language-text" tabindex="0"><code class="language-text">oSAEACBQbusr6ZZslqwlPqhpIogL6slC7t74JE2zvQjVgNvwuQIxo76Rt2W9KIJ/khyI8jgd61ZU
+uZPTWWJqf2Uw9N1cYoABdEISbjSoHOWd9JE8NIMQABpwLrv1qgE=</code></pre>
+<p>How does somebody make sense of this? On my system I know how I created this file and I know the filename, so I know exactly what it is. But without that, what do you do? Let's use the <code>file</code> tool to make a guess by running <code>file -i</code> on it.</p>
+<pre class="language-text" tabindex="0"><code class="language-text">application/octet-stream; charset=binary</code></pre>
+<p>That's not useful. The output might as well have been</p>
+<pre class="language-text" tabindex="0"><code class="language-text">¯\_(ツ)_/¯</code></pre>
+<h2 id="add-the-metadata" tabindex="-1">Add the metadata <a class="header-anchor" href="#add-the-metadata">#</a></h2>
+<p>The only way you're going to make sense of this data is if I start giving you more information. The first thing I'm going to tell you is that this is compressed with brotli.</p>
+<p>The format will use the concept that data encoding is different from the file type. Generally that will mean we can compress the data without having to nest our metadata. I'll add a metadata field to the format that tells you the encoding.</p>
+<pre class="language-text" tabindex="0"><code class="language-text">content-encoding: br</code></pre>
+<p>If you decompress the data and look at the result, it will immediately become apparent what the file is. For the sake of continuing this article, let's pretend that we're not human beings with advanced pattern recognition capabilities, but a computer that's not being allowed to guess.</p>
+<p>In order to understand this file, the next thing you need is to know the file type. Running <code>file -i</code> on the decompressed file gets it right this time, but we're no longer allowed to guess. I'll give you another metadata field that tells you the file type.</p>
+<pre class="language-text" tabindex="0"><code class="language-text">content-type: text/plain; charset=us-ascii</code></pre>
+<p>It's just plain ASCII text! Now that you have this information, you can properly interpret the data. Go ahead and try decoding the data now.</p>
+<h2 id="this-looks-familiar" tabindex="-1">This looks familiar... <a class="header-anchor" href="#this-looks-familiar">#</a></h2>
+<p>Go ahead and give yourself a gold star if you recognize what I've been doing so far. That's right, I am straight up ripping off HTTP. The metadata of SDBD will be a list of headers semantically equivalent to HTTP headers. I'll even say, for the sake of implementation, we'll follow similar rules:</p>
+<ol>
+<li>Headers names are case insensitive</li>
+<li>Multiple headers can have the same name</li>
+<li>The order of headers is significant and must be preserved
+Note that when we get to the proof of concept, I won't be following any of these rules.</li>
+</ol>
+<h2 id="what-s-your-name" tabindex="-1">What's your name? <a class="header-anchor" href="#what-s-your-name">#</a></h2>
+<p>I do need to make a few tweaks. Solving part of our original problem requires storing the filename. There aren't any standard HTTP headers that are exactly meant for this. <code>content-disposition</code> can contain a filename, but its real purpose is something else. That header will normally look something like this:</p>
+<pre class="language-text" tabindex="0"><code class="language-text">content-disposition: attachment; filename="filename.jpg"</code></pre>
+<p>This header is meant to tell a browser whether the response should be displayed in the browser or downloaded. SDBD isn't meant specifically for browsers so we would be including useless information just to store a filename in an awkwardly formatted field.</p>
+<p>I'll create a new header for this.</p>
+<pre class="language-text" tabindex="0"><code class="language-text">content-name: sample.txt</code></pre>
+<h2 id="when-does-it-end" tabindex="-1">When does it end? <a class="header-anchor" href="#when-does-it-end">#</a></h2>
+<p>We need a way to identify exactly what size the data is. <code>content-length</code> is technically optional in HTTP, since you can mark the end of a response by closing the connection. But we're not making any assumptions about the context of an SDBD, so we can't assume a connection to close. I'd rather not try to create a marker for the end of the data, so I'll say that <code>content-length</code> is required.</p>
+<h2 id="what-do-we-actually-need" tabindex="-1">What do we actually need? <a class="header-anchor" href="#what-do-we-actually-need">#</a></h2>
+<p>Let's wrap this up by deciding what's required, what <em>should</em> be present, and what's optional. I've already decided that <code>content-length</code> is required, and I think that's the only thing we absolutely need.</p>
+<p>I think <code>content-type</code> should be present, but I don't want to make it an absolute requirement. I don't see a use case where you wouldn't want <code>content-type</code>, but let's not limit ourselves unnecessarily. Also, since I haven't explicitly stated it yet, the value of <code>content-type</code> must be a MIME type.</p>
+<p>If the documented is encoded (compressed), <code>content-encoding</code> must also be present unless the metadata is specifically describing the encoded data. I don't want to define exactly what the value of <code>content-encoding</code> must be, other than that implementations should support the common values used on the web: <code>gzip</code>, <code>deflate</code>, and <code>br</code>.</p>
+<p>Other encodings should perhaps use their own MIME type, such as <code>application/x-bzip2</code>. I'm not ready to set that in stone in case somebody comes up with a use case for encoding that isn't about compression.</p>
+<p>The data should have a good identifier as well, so we should give it a filename with <code>content-name</code>, a URI with <code>content-location</code>, or both.</p>
+<p>Anything else is optional.</p>
+<p>With that, here is the complete metadata for the example document.</p>
+<pre class="language-text" tabindex="0"><code class="language-text">content-name: sample.txt
+content-encoding: br
+content-type: text/plain; charset=us-ascii
+content-length: 95</code></pre>
+<h2 id="sounds-simple-enough" tabindex="-1">Sounds simple enough <a class="header-anchor" href="#sounds-simple-enough">#</a></h2>
+<p>That's all the information a computer would need to interpret the example data. The format consists of the data combined with metadata that is a list of headers semantically similar to HTTP headers. There's one header required for the length of the data, and a few others that are commended. That's all there is to it.</p>
+<p>Now we need to define what this will all look like in a real binary format.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/eleventy-base-blog/blog/2024-01-07-01-SDBD/">Let&#39;s Create a Data Format</a></li><li>Next: <a href="/eleventy-base-blog/blog/2024-01-07-03-Data_Format/">What Does SDBD Actually Look Like?</a></li>
+</ul>
+
+		</main>
+
+		<footer></footer>
+
+		<!-- Current page: /eleventy-base-blog/blog/2024-01-07-02-Semantics/ -->
+	</body>
+</html>
