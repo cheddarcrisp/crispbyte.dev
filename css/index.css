@@ -158,6 +158,16 @@ header {
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
+header > .links {
+	margin-left: auto;
+}
+header > .links a {
+	display: inline-flex;
+	margin-left: 12px;
+}
+header > .links img {
+	height: 24px;
+}
 
 /* Nav */
 .nav {

@@ -337,6 +337,16 @@ header {
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
+header > .links {
+	margin-left: auto;
+}
+header > .links a {
+	display: inline-flex;
+	margin-left: 12px;
+}
+header > .links img {
+	height: 24px;
+}
 
 /* Nav */
 .nav {
@@ -461,6 +471,11 @@ h2 + .header-anchor {
 					<li class="nav-item"><a href="/about/">About Me</a></li>
 				</ul>
 			</nav>
+			<ul class="nav links">
+			  <a rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="RSS Feed"><img src="/img/feed-icon.svg" alt="RSS Feed"></a>
+				<a href="https://github.com/cheddarcrisp" title="GitHub Profile"><img src="/img/github-mark.svg" alt="GitHub Profile"></a>
+				<a href="https://hachyderm.io/@cheddarcrisp" rel="me" title="Mastodon Profile"><img src="/img/mastodon-logo.svg" alt="Mastodon Profile"></a>
+			</ul>
 		</header>
 
 		<main id="skip">
