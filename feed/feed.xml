@@ -4,12 +4,33 @@
 	<subtitle>Programming. Puns.</subtitle>
 	<link href="https://crispbyte.dev/feed/feed.xml" rel="self"/>
 	<link href="https://crispbyte.dev/"/>
-	<updated>2024-01-09T00:00:00Z</updated>
+	<updated>2024-04-24T00:00:00Z</updated>
 	<id>https://crispbyte.dev/</id>
 	<author>
 		<name>CheddarCrisp</name>
 		<email>cheddar@crispbyte.dev</email>
 	</author>
+	
+	<entry>
+		<title>Co-op Resources</title>
+		<link href="https://crispbyte.dev/blog/2024-04-24-Coop_Resources/"/>
+		<updated>2024-04-24T00:00:00Z</updated>
+		<id>https://crispbyte.dev/blog/2024-04-24-Coop_Resources/</id>
+		<content type="html">&lt;p&gt;This list is not a how-to on starting or operating a co-op. It is mostly a link dump. The resources that seem most useful are at the top and should provide all you need to get started. I haven&#39;t read through all of these resources but they all look directly applicable at least.&lt;/p&gt;
+&lt;p&gt;The one place that is probably the most helpful - definitely for the US and possibly in general - is the &lt;a href=&quot;https://www.usworker.coop/en/&quot;&gt;US Federation of Worker Cooperatives&lt;/a&gt;. I highly recommend attending the startup webinar or &lt;a href=&quot;https://www.youtube.com/watch?v=LaBJm2WPf2Y&amp;amp;t=4s&quot;&gt;watching a recording&lt;/a&gt;. There is a &lt;a href=&quot;https://docs.google.com/document/d/1kFGLppPxCWHI7HsbF6W3fyMDRPaIqkpLubknA6hKlds/edit&quot;&gt;link document&lt;/a&gt; that goes with that webinar with more resources I don&#39;t list here.&lt;/p&gt;
+&lt;p&gt;These are good introductions to co-ops, how they work, and why you&#39;d want one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://electricembers.coop//pubs/TechCoopHOWTO.pdf&quot;&gt;A Technology Freelancer&#39;s Guide To Starting a Worker Cooperative (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://modelviewculture.com/pieces/worker-coops-a-better-way-to-make-a-living-in-tech&quot;&gt;Worker Coops: A Better Way to Make a Living in Tech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://drive.google.com/file/d/0B_rgt0QdXUbycnprd3hhYzdWNnc/view&quot;&gt;Think Outside the Boss (PDF Book)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nathanschneider.info/books/everything-for-everyone/&quot;&gt;Everything for Everyone (Book)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Though the organization is not specifically for co-ops, &lt;a href=&quot;https://www.seedsforchange.org.uk/resources&quot;&gt;Seeds for Change&lt;/a&gt; does offer some resources for co-ops in the UK.&lt;/p&gt;
+&lt;p&gt;For governance, &lt;a href=&quot;https://www.sociocracyforall.org/&quot;&gt;Sociocracy&lt;/a&gt; looks promising. I&#39;d recommend going through their &lt;a href=&quot;https://learn.sociocracyforall.org/courses/sociocracy-journey/&quot;&gt;free course&lt;/a&gt; that explains the fundamentals of this governance model.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.co-oplaw.org/&quot;&gt;Co-opLaw.org&lt;/a&gt; has a bunch of legal resources for co-ops.&lt;/p&gt;
+&lt;p&gt;A co-op called Enspiral shares their &lt;a href=&quot;https://handbook.enspiral.com/&quot;&gt;entire handbook&lt;/a&gt; online for free.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Improvements</title>

@@ -3,12 +3,221 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Crisp Byte</title>
+		<title>Co-op Resources</title>
 		<meta name="description" content="Programming. Puns.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Crisp Byte">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Crisp Byte">
 		
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2b2b2b;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #d4d0ab;
+}
+
+.token.punctuation {
+	color: #fefefe;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #ffa07a;
+}
+
+.token.boolean,
+.token.number {
+	color: #00e0e0;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #abe338;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #00e0e0;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #ffd700;
+}
+
+.token.keyword {
+	color: #00e0e0;
+}
+
+.token.regex,
+.token.important {
+	color: #ffd700;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+@media screen and (-ms-high-contrast: active) {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		color: windowText;
+		background: window;
+	}
+
+	:not(pre) > code[class*="language-"],
+	pre[class*="language-"] {
+		background: window;
+	}
+
+	.token.important {
+		background: highlight;
+		color: window;
+		font-weight: normal;
+	}
+
+	.token.atrule,
+	.token.attr-value,
+	.token.function,
+	.token.keyword,
+	.token.operator,
+	.token.selector {
+		font-weight: bold;
+	}
+
+	.token.attr-value,
+	.token.comment,
+	.token.doctype,
+	.token.function,
+	.token.keyword,
+	.token.operator,
+	.token.property,
+	.token.string {
+		color: highlight;
+	}
+
+	.token.attr-value,
+	.token.url {
+		font-weight: normal;
+	}
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+code[class*="language-"], pre[class*="language-"] {
+	font-size: 0.915em;
+}
+* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -312,23 +521,34 @@ h2 + .header-anchor {
 
 		<main id="skip">
 			
-<h1>Tags</h1>
+<h1>Co-op Resources</h1>
 
-<ul>
-
-	
-	<li><a href="/tags/sdbd/" class="post-tag">SDBD</a></li>
-
-	
+<ul class="post-metadata">
+	<li><time datetime="2024-04-24">24 April 2024</time></li>
 	<li><a href="/tags/co-ops/" class="post-tag">co-ops</a></li>
-
 </ul>
 
+<p>This list is not a how-to on starting or operating a co-op. It is mostly a link dump. The resources that seem most useful are at the top and should provide all you need to get started. I haven't read through all of these resources but they all look directly applicable at least.</p>
+<p>The one place that is probably the most helpful - definitely for the US and possibly in general - is the <a href="https://www.usworker.coop/en/">US Federation of Worker Cooperatives</a>. I highly recommend attending the startup webinar or <a href="https://www.youtube.com/watch?v=LaBJm2WPf2Y&amp;t=4s">watching a recording</a>. There is a <a href="https://docs.google.com/document/d/1kFGLppPxCWHI7HsbF6W3fyMDRPaIqkpLubknA6hKlds/edit">link document</a> that goes with that webinar with more resources I don't list here.</p>
+<p>These are good introductions to co-ops, how they work, and why you'd want one.</p>
+<ul>
+<li><a href="https://electricembers.coop//pubs/TechCoopHOWTO.pdf">A Technology Freelancer's Guide To Starting a Worker Cooperative (PDF)</a></li>
+<li><a href="https://modelviewculture.com/pieces/worker-coops-a-better-way-to-make-a-living-in-tech">Worker Coops: A Better Way to Make a Living in Tech</a></li>
+<li><a href="https://drive.google.com/file/d/0B_rgt0QdXUbycnprd3hhYzdWNnc/view">Think Outside the Boss (PDF Book)</a></li>
+<li><a href="https://nathanschneider.info/books/everything-for-everyone/">Everything for Everyone (Book)</a></li>
+</ul>
+<p>Though the organization is not specifically for co-ops, <a href="https://www.seedsforchange.org.uk/resources">Seeds for Change</a> does offer some resources for co-ops in the UK.</p>
+<p>For governance, <a href="https://www.sociocracyforall.org/">Sociocracy</a> looks promising. I'd recommend going through their <a href="https://learn.sociocracyforall.org/courses/sociocracy-journey/">free course</a> that explains the fundamentals of this governance model.</p>
+<p><a href="https://www.co-oplaw.org/">Co-opLaw.org</a> has a bunch of legal resources for co-ops.</p>
+<p>A co-op called Enspiral shares their <a href="https://handbook.enspiral.com/">entire handbook</a> online for free.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blog/2024-01-09-03-Improvements/">Improvements</a></li>
+</ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- Current page: /tags/ -->
+		<!-- Current page: /blog/2024-04-24-Coop_Resources/ -->
 	</body>
 </html>

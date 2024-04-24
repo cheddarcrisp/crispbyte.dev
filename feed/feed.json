@@ -11,6 +11,14 @@
 	},
 	"items": [
 		{
+			"id": "https://crispbyte.dev/blog/2024-04-24-Coop_Resources/",
+			"url": "https://crispbyte.dev/blog/2024-04-24-Coop_Resources/",
+			"title": "Co-op Resources",
+			"content_html": "<p>This list is not a how-to on starting or operating a co-op. It is mostly a link dump. The resources that seem most useful are at the top and should provide all you need to get started. I haven't read through all of these resources but they all look directly applicable at least.</p>\n<p>The one place that is probably the most helpful - definitely for the US and possibly in general - is the <a href=\"https://www.usworker.coop/en/\">US Federation of Worker Cooperatives</a>. I highly recommend attending the startup webinar or <a href=\"https://www.youtube.com/watch?v=LaBJm2WPf2Y&amp;t=4s\">watching a recording</a>. There is a <a href=\"https://docs.google.com/document/d/1kFGLppPxCWHI7HsbF6W3fyMDRPaIqkpLubknA6hKlds/edit\">link document</a> that goes with that webinar with more resources I don't list here.</p>\n<p>These are good introductions to co-ops, how they work, and why you'd want one.</p>\n<ul>\n<li><a href=\"https://electricembers.coop//pubs/TechCoopHOWTO.pdf\">A Technology Freelancer's Guide To Starting a Worker Cooperative (PDF)</a></li>\n<li><a href=\"https://modelviewculture.com/pieces/worker-coops-a-better-way-to-make-a-living-in-tech\">Worker Coops: A Better Way to Make a Living in Tech</a></li>\n<li><a href=\"https://drive.google.com/file/d/0B_rgt0QdXUbycnprd3hhYzdWNnc/view\">Think Outside the Boss (PDF Book)</a></li>\n<li><a href=\"https://nathanschneider.info/books/everything-for-everyone/\">Everything for Everyone (Book)</a></li>\n</ul>\n<p>Though the organization is not specifically for co-ops, <a href=\"https://www.seedsforchange.org.uk/resources\">Seeds for Change</a> does offer some resources for co-ops in the UK.</p>\n<p>For governance, <a href=\"https://www.sociocracyforall.org/\">Sociocracy</a> looks promising. I'd recommend going through their <a href=\"https://learn.sociocracyforall.org/courses/sociocracy-journey/\">free course</a> that explains the fundamentals of this governance model.</p>\n<p><a href=\"https://www.co-oplaw.org/\">Co-opLaw.org</a> has a bunch of legal resources for co-ops.</p>\n<p>A co-op called Enspiral shares their <a href=\"https://handbook.enspiral.com/\">entire handbook</a> online for free.</p>\n",
+			"date_published": "2024-04-24T00:00:00Z"
+		}
+		,
+		{
 			"id": "https://crispbyte.dev/blog/2024-01-09-03-Improvements/",
 			"url": "https://crispbyte.dev/blog/2024-01-09-03-Improvements/",
 			"title": "Improvements",
